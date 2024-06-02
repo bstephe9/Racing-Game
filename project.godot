@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Global="*res://main/global.gd"
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 move_right={

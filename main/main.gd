@@ -1,11 +1,17 @@
-extends Node3D
+extends Node
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	capture_mouse()
 
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("exit"): get_tree().quit()
+	if Input.is_action_just_pressed("mouse_capture"):
+		release_mouse() if Global.mouse_captured else capture_mouse()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func capture_mouse() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Global.mouse_captured = true
+
+func release_mouse() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	Global.mouse_captured = false

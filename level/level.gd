@@ -8,8 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#$Debug/L_car.text = "Pos: %s | Rot: %s" % [
-		#$Vehicle.position,
-		#$Vehicle.rotation
-	#]
-	pass
+	$Debug/L_car.text = "Pos: %s | Rot: %s" % [
+		$Vehicle.position,
+		$Vehicle.rotation
+	]

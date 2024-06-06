@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://db0wbmpcucqse"]
 
-[ext_resource type="PackedScene" uid="uid://cje2lqtjgiug0" path="res://player/player.tscn" id="1_1xvcw"]
 [ext_resource type="Script" path="res://level/level.gd" id="1_pux20"]
 [ext_resource type="Texture2D" uid="uid://2i1a05bmsyy4" path="res://level/road/Road.png" id="2_prenm"]
+[ext_resource type="PackedScene" uid="uid://bj64dkf85bq75" path="res://vehicle/vehicle.tscn" id="3_8kl83"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ht18e"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -90,8 +90,8 @@ transform = Transform3D(0.461177, 0, 0, 0, 8.10106, 0, 0, 0, 0.990355, -10.8641,
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Road/Road/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_sty6r")
 
-[node name="Player" parent="." instance=ExtResource("1_1xvcw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017, 0, 0.035)
+[node name="Vehicle" parent="." instance=ExtResource("3_8kl83")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Debug" type="Node" parent="."]
 

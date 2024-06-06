@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bj64dkf85bq75"]
+[gd_scene load_steps=17 format=3 uid="uid://bj64dkf85bq75"]
 
 [ext_resource type="Script" path="res://vehicle/vehicle.gd" id="1_3h4v3"]
 [ext_resource type="Texture2D" uid="uid://dqxgjrwxlhgmw" path="res://vehicle/Car2_car2.png" id="1_va1am"]
+[ext_resource type="Script" path="res://vehicle/camera/camera_pivot.gd" id="3_5x0ug"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2vdav"]
 friction = 0.9
@@ -236,6 +237,10 @@ mesh = SubResource("ArrayMesh_k221q")
 skeleton = NodePath("")
 
 [node name="CameraPivot" type="Node3D" parent="."]
+script = ExtResource("3_5x0ug")
 
-[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+[node name="ForwardCamera" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(-1, -2.99003e-08, 8.21505e-08, 0, 0.939693, 0.34202, -8.74228e-08, 0.34202, -0.939693, 0, 5, -8)
+
+[node name="RearCamera" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 5, 8)

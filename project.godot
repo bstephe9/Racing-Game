@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Global="*res://main/global.gd"
 
+[display]
+
+window/size/always_on_top=true
+
 [filesystem]
 
 import/fbx/enabled=false

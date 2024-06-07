@@ -20,7 +20,7 @@ glow_enabled = true
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ufod"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_k01e7"]
-font_size = 24
+font_size = 12
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_pux20")

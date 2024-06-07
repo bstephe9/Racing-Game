@@ -31,7 +31,9 @@ environment = SubResource("Environment_tlxdd")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0376029, 0.999293, 0, -0.999293, 0.0376029, 0, 4.43912, 0.256881)
 
-[node name="GridMap" type="GridMap" parent="."]
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Road" type="GridMap" parent="Map"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh_library = ExtResource("2_wcj6g")
 physics_material = SubResource("PhysicsMaterial_8ufod")

@@ -203,6 +203,7 @@ skeleton = NodePath("")
 [node name="FrontLeft" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04685, 0.436138, 1.899)
 use_as_steering = true
+wheel_friction_slip = 7.0
 suspension_stiffness = 20.0
 
 [node name="Wheel_001" type="MeshInstance3D" parent="FrontLeft"]
@@ -213,6 +214,7 @@ skeleton = NodePath("")
 [node name="FrontRight" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04685, 0.436138, 1.899)
 use_as_steering = true
+wheel_friction_slip = 7.0
 suspension_stiffness = 20.0
 
 [node name="Wheel_002" type="MeshInstance3D" parent="FrontRight"]
@@ -223,6 +225,7 @@ skeleton = NodePath("")
 [node name="BackLeft" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04685, 0.43614, -1.81505)
 use_as_traction = true
+wheel_friction_slip = 7.0
 suspension_stiffness = 15.0
 
 [node name="Wheel_003" type="MeshInstance3D" parent="BackLeft"]
@@ -233,6 +236,7 @@ skeleton = NodePath("")
 [node name="BackRight" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04685, 0.43614, -1.81505)
 use_as_traction = true
+wheel_friction_slip = 7.0
 suspension_stiffness = 15.0
 
 [node name="Wheel_004" type="MeshInstance3D" parent="BackRight"]

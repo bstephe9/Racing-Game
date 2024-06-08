@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://db0wbmpcucqse"]
+[gd_scene load_steps=10 format=3 uid="uid://db0wbmpcucqse"]
 
 [ext_resource type="Script" path="res://level/level.gd" id="1_pux20"]
 [ext_resource type="MeshLibrary" uid="uid://d03kwvsiwc4gp" path="res://level/tiles/tiles.tres" id="2_wcj6g"]
 [ext_resource type="PackedScene" uid="uid://bj64dkf85bq75" path="res://vehicle/vehicle.tscn" id="3_8kl83"]
+[ext_resource type="Texture2D" uid="uid://7o036tqqo76t" path="res://level/start_line/start_line.png" id="3_v52dk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ht18e"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -44,8 +45,15 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
+[node name="StartLine" type="Sprite3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.72028, 4.21321, -63.7502)
+flip_h = true
+pixel_size = 1.1
+texture_filter = 0
+texture = ExtResource("3_v52dk")
+
 [node name="Vehicle" parent="." instance=ExtResource("3_8kl83")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10, 4, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.83248, 4, -52.6043)
 
 [node name="Debug" type="Node" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bj64dkf85bq75"]
+[gd_scene load_steps=18 format=3 uid="uid://bj64dkf85bq75"]
 
 [ext_resource type="Script" path="res://vehicle/vehicle.gd" id="1_3h4v3"]
 [ext_resource type="Texture2D" uid="uid://dqxgjrwxlhgmw" path="res://vehicle/Car2_car2.png" id="1_va1am"]
@@ -10,6 +10,9 @@ bounce = 0.35
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nv2od"]
 points = PackedVector3Array(-1.4492, 0.730379, -1.45327, -0.957244, -1.65552, -2.13934, -1.19811, -2.37237, -1.60731, -1.15017, -3.08027, -1.60731, -1.19925, -3.27084, -0.901676, -1.20237, -3.26828, -0.533641, -1.4492, 0.730379, -1.27764, -1.4492, 0.810313, -1.45327, -0.957244, 0.344773, -2.13676, -0.00028336, 0.344773, -2.16923, -0.00028336, -1.65552, -2.17163, 1.14988, -3.08027, -1.60731, -0.00028336, -3.29706, -0.902967, -0.00028336, -3.29706, -0.533641, -1.14307, -1.33833, -0.286993, -1.19698, -2.28988, -0.409856, -1.4492, 0.810313, -1.27764, -1.16293, 3.154, -0.823826, -1.10194, 2.98326, -1.19002, 0.956961, 0.344773, -2.13676, 0.956961, -1.65552, -2.13934, -0.00028336, 3.03698, -1.19002, 1.10137, 2.98326, -1.19002, 1.19897, -3.27084, -0.901676, 1.19783, -2.37237, -1.60731, 1.4492, 0.730379, -1.45327, 1.20209, -3.26828, -0.533641, 1.14279, -1.33833, -0.286993, -1.09768, 2.39686, -0.312082, -1.14307, 1.42421, -0.306548, -1.12095, 3.14953, -0.502833, -0.00028336, 3.23522, -0.502833, -0.00028336, 3.23522, -0.823826, 1.4492, 0.810313, -1.45327, 1.16237, 3.154, -0.823826, 1.4492, 0.730379, -1.27764, 1.1967, -2.28988, -0.409856, 1.14279, 1.42421, -0.306548, 1.0974, 2.39686, -0.312082, 1.12066, 3.14953, -0.502833, 1.4492, 0.810313, -1.27764)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5et57"]
+size = Vector3(2.35859, 5.5, 2.65947)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7q7u"]
 resource_name = "car2_mat"
@@ -190,10 +193,18 @@ shadow_mesh = SubResource("ArrayMesh_53bsx")
 mass = 35.0
 physics_material_override = SubResource("PhysicsMaterial_2vdav")
 script = ExtResource("1_3h4v3")
+max_speed = 50
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, -1, 0, 1, -3.57628e-07, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_nv2od")
+
+[node name="CheckpointDetector" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -3.57628e-07, -1, 0, 1, -3.57628e-07, 0, -0.0385435, -0.0770864)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CheckpointDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.026, -1.31245)
+shape = SubResource("BoxShape3D_5et57")
 
 [node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, -1, 0, 1, -3.57628e-07, 0, 0, 0)
@@ -252,3 +263,5 @@ transform = Transform3D(-1, -2.99003e-08, 8.21505e-08, 0, 0.939693, 0.34202, -8.
 
 [node name="RearCamera" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 5, 8)
+
+[connection signal="area_entered" from="CheckpointDetector" to="." method="_on_checkpoint_entered"]

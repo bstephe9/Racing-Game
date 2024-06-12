@@ -256,6 +256,7 @@ mesh = SubResource("ArrayMesh_k221q")
 skeleton = NodePath("")
 
 [node name="CameraPivot" type="Node3D" parent="."]
+top_level = true
 script = ExtResource("3_5x0ug")
 
 [node name="ForwardCamera" type="Camera3D" parent="CameraPivot"]

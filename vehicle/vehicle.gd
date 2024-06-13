@@ -12,7 +12,7 @@ func _physics_process(delta: float) -> void:
 		Input.get_axis("turn_right", "turn_left") * max_steer,
 		delta * 2.5
 	)
-	engine_force = Input.get_axis("none", "move_forward") * engine_power
+	engine_force = Input.get_axis("move_backward", "move_forward") * engine_power
 
 func _integrate_forces(state):
 	var velocity = state.get_linear_velocity()

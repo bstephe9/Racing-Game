@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://bj64dkf85bq75"]
+[gd_scene load_steps=19 format=3 uid="uid://bj64dkf85bq75"]
 
 [ext_resource type="Script" path="res://vehicle/vehicle.gd" id="1_3h4v3"]
 [ext_resource type="Texture2D" uid="uid://dqxgjrwxlhgmw" path="res://vehicle/Car2_car2.png" id="1_va1am"]
 [ext_resource type="Script" path="res://vehicle/camera/camera_pivot.gd" id="3_5x0ug"]
+[ext_resource type="AudioStream" uid="uid://cabno6evq2ujm" path="res://vehicle/sound_effects/engine.wav" id="4_o8mkp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2vdav"]
 friction = 0.9
@@ -193,7 +194,6 @@ shadow_mesh = SubResource("ArrayMesh_53bsx")
 mass = 35.0
 physics_material_override = SubResource("PhysicsMaterial_2vdav")
 script = ExtResource("1_3h4v3")
-max_speed = 50
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, -1, 0, 1, -3.57628e-07, 0, 0, 0)
@@ -264,5 +264,12 @@ transform = Transform3D(-1, -2.99003e-08, 8.21505e-08, 0, 0.939693, 0.34202, -8.
 
 [node name="RearCamera" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 5, 8)
+
+[node name="EngineSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_o8mkp")
+volume_db = 25.0
+max_db = 0.0
+pitch_scale = 4.0
+bus = &"SFX"
 
 [connection signal="area_entered" from="CheckpointDetector" to="." method="_on_checkpoint_entered"]

@@ -1,6 +1,7 @@
 extends Vehicle
 
 func _ready() -> void:
+	super()
 	max_steer = 0.8
 	engine_power = 500
 	max_speed = 50

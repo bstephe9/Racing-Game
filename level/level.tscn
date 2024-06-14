@@ -120,5 +120,3 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 text = "Checkpoint"
 label_settings = SubResource("LabelSettings_k01e7")
-
-[connection signal="checkpoint_entered" from="Player" to="." method="_on_checkpoint_entered"]

@@ -1,6 +1,8 @@
 class_name Vehicle
 extends VehicleBody3D
 
+signal lap_complete
+
 const PITCH_MIN: float = 1.0
 const PITCH_MAX: float = 1.4
 const ENGINE_MIN_PLAY: float = 1.5
@@ -15,7 +17,7 @@ var pitch_effect = AudioServer.get_bus_effect(1, 0)
 @export var engine_power = 500
 @export var max_speed = 50
 
-func _ready() -> void:
+func _enter_tree() -> void:
 	current_level = GameManager.current_level
 
 func _physics_process(delta: float) -> void:

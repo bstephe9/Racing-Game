@@ -12,7 +12,3 @@ func debug() -> void:
 		$Vehicle.position,
 		$Vehicle.rotation
 	]
-
-func update_hud() -> void:
-	#$HUD/Lap.text = "Lap: %d/%d" % [current_lap, MAX_LAPS]
-	pass

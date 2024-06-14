@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://db0wbmpcucqse"]
+[gd_scene load_steps=13 format=3 uid="uid://db0wbmpcucqse"]
 
 [ext_resource type="Script" path="res://level/level.gd" id="1_pux20"]
 [ext_resource type="MeshLibrary" uid="uid://d03kwvsiwc4gp" path="res://level/tiles/tiles.tres" id="2_wcj6g"]
 [ext_resource type="PackedScene" uid="uid://bj64dkf85bq75" path="res://vehicle/vehicle.tscn" id="3_8kl83"]
 [ext_resource type="Texture2D" uid="uid://7o036tqqo76t" path="res://level/start_line/start_line.png" id="3_v52dk"]
+[ext_resource type="Script" path="res://level/hud/hud.gd" id="5_x62ka"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ht18e"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -91,6 +92,7 @@ shape = SubResource("SeparationRayShape3D_b25e5")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.83248, 4, -52.6043)
 
 [node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("5_x62ka")
 
 [node name="Lap" type="Label" parent="HUD"]
 offset_left = 21.0
@@ -99,7 +101,7 @@ offset_right = 159.0
 offset_bottom = 61.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Lap"
+text = "[insert lap]"
 label_settings = SubResource("LabelSettings_8s4t4")
 
 [node name="Debug" type="Node" parent="."]
@@ -112,6 +114,7 @@ text = "Test"
 label_settings = SubResource("LabelSettings_k01e7")
 
 [node name="L_checkpoint" type="Label" parent="Debug"]
+visible = false
 offset_left = 21.0
 offset_top = 80.0
 offset_right = 218.0
@@ -120,3 +123,5 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 text = "Checkpoint"
 label_settings = SubResource("LabelSettings_k01e7")
+
+[connection signal="lap_complete" from="Player" to="HUD" method="_on_player_lap_complete"]

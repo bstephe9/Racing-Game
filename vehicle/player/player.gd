@@ -1,7 +1,6 @@
 extends Vehicle
 
 func _ready() -> void:
-	super()
 	max_steer = 0.8
 	engine_power = 500
 	max_speed = 50
@@ -14,3 +13,7 @@ func _physics_process(delta: float) -> void:
 		delta * 5.0
 	)
 	engine_force = Input.get_axis("move_backward", "move_forward") * engine_power
+
+func new_lap() -> void:
+	super()
+	lap_complete.emit(current_lap)

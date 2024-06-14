@@ -11,7 +11,7 @@ func _ready() -> void:
 	new_lap()
 
 func _process(delta: float) -> void:
-	debug()
+	pass
 
 func debug() -> void:
 	$Debug/L_car.text = "Pos: %s | Rot: %s" % [

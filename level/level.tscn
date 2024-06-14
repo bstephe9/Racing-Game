@@ -87,7 +87,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 160.72
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, 0)
 shape = SubResource("SeparationRayShape3D_b25e5")
 
-[node name="Vehicle" parent="." instance=ExtResource("3_8kl83")]
+[node name="Player" parent="." instance=ExtResource("3_8kl83")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.83248, 4, -52.6043)
 
 [node name="HUD" type="CanvasLayer" parent="."]
@@ -121,4 +121,4 @@ size_flags_vertical = 0
 text = "Checkpoint"
 label_settings = SubResource("LabelSettings_k01e7")
 
-[connection signal="checkpoint_entered" from="Vehicle" to="." method="_on_checkpoint_entered"]
+[connection signal="checkpoint_entered" from="Player" to="." method="_on_checkpoint_entered"]

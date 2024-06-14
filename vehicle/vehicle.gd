@@ -1,3 +1,4 @@
+class_name Vehicle
 extends VehicleBody3D
 
 signal checkpoint_entered(checkpoint_index: int)
@@ -13,13 +14,6 @@ var pitch_effect = AudioServer.get_bus_effect(1, 0)
 @export var max_speed = 50
 
 func _physics_process(delta: float) -> void:
-	steering = move_toward(
-		steering,
-		Input.get_axis("turn_right", "turn_left") * max_steer,
-		delta * 5.0
-	)
-	engine_force = Input.get_axis("move_backward", "move_forward") * engine_power
-	
 	# Make engine play sound only when vehicle reaches a certain speed
 	if velocity.length() > ENGINE_MIN_PLAY: # TODO Use a tween
 		play_engine_sound()

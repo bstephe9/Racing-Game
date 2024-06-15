@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://is25nqlwqia8"]
+
+[ext_resource type="PackedScene" uid="uid://bj64dkf85bq75" path="res://vehicle/vehicle.tscn" id="1_a57wl"]
+[ext_resource type="Script" path="res://vehicle/cpu/cpu.gd" id="2_1xysm"]
+
+[node name="CPU" instance=ExtResource("1_a57wl")]
+script = ExtResource("2_1xysm")

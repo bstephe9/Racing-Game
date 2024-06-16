@@ -1,6 +1,7 @@
 extends Vehicle
 
 func _ready() -> void:
+	top_level = true # To spawn in the correct location in 3D viewport
 	max_steer = 0.8
 	engine_power = 500
 	max_speed = 50

@@ -22,7 +22,7 @@ func _enter_tree() -> void:
 
 func _physics_process(delta: float) -> void:
 	# Make engine play sound only when vehicle reaches a certain speed
-	if velocity.length() > ENGINE_MIN_PLAY: # TODO Use a tween
+	if velocity.length() > ENGINE_MIN_PLAY and velocity.y > -1: # TODO Use a tween
 		play_engine_sound()
 	else:
 		$EngineSound.stop()

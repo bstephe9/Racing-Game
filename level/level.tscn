@@ -159,4 +159,5 @@ size_flags_vertical = 0
 text = "Checkpoint"
 label_settings = SubResource("LabelSettings_k01e7")
 
+[connection signal="countdown_finished" from="HUD" to="Racers/Player" method="_on_hud_countdown_finished"]
 [connection signal="timeout" from="HUD/CountdownTimer" to="HUD" method="_on_countdown_timer_timeout"]

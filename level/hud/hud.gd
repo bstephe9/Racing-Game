@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal countdown_finished
+
 func _ready() -> void:
 	$Lap.text = "Lap: 1/%d" % [GameManager.current_level.MAX_LAPS]
 
@@ -15,5 +17,6 @@ func countdown() -> void:
 
 func _on_countdown_timer_timeout() -> void:
 	$Countdown.text = "GO!"
+	countdown_finished.emit(["move_forward", "move_backward"]) # Re-enable inputs
 	await get_tree().create_timer(1.0).timeout
 	$Countdown.hide()
